@@ -9,17 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
     <link rel="stylesheet" href="css/style.css">
-    <script src="../js/script.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
-<body id="bodypart">
+<body>
     <header class="section__header">
-        <div class="container block">
+        <div class="container block block__header">
             <a href="#" class="logo">
                 <img src="img/logo.svg" alt="логотип" class="logo__img">
             </a>
             <!-- /.logo -->
             <input type="text" class="input input-adress" placeholder="Адрес доставки">
-            <div class="buttons">
+            <div class="buttons header__buttons">
                 <button class="button button__man button--primary">Войти</button>
                 <button class="button button__cart button--secondary">Корзина</button>
             </div>
@@ -40,10 +40,10 @@
     </section>
     <!-- /.section__promo -->
     <section class="section__restourants">
-        <div class="container">
+        <div class="container container_rest">
             <div class="restour__search">
                 <h2 class="sectin__title">Рестораны</h2>
-                <input type="" class="input input-search" placeholder="Поиск блюд и ресторанов">
+                <input class="input input-search" placeholder="Поиск блюд и ресторанов">
             </div>
             <!-- /.restour__search -->
             <div class="cards">
@@ -179,7 +179,7 @@
     </section>
     <!-- /.section__restourants -->
     <footer class="section__footer">
-        <div class="container block">
+        <div class="container block block__footer">
             <div class="block__navigation">
                 <a href="#" class="logo">
                     <img src="img/logo.svg" alt="логотип" class="logo__img">
@@ -205,17 +205,19 @@
     <!-- /.section__footer -->
     <div class="modal">
         <div class="modal-block">
-            <h2 class="modal-title">Корзина</h2>
-            <button class="button-closed"></button>
+            <div class="cart-and-close">
+                <h2 class="modal-title">Корзина</h2>
+                <button class="button-closed"></button>
+            </div>
             <div class="modal-body">
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -224,11 +226,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -237,11 +239,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -250,11 +252,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -263,11 +265,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -276,10 +278,12 @@
             </div>
             <!-- /.body -->
             <div class="modal-footer">
-                <strong class="fullprice">1250 ₽</strong>
+                <div class="fullprice_container">
+                    <strong class="fullprice">1250</strong>
+                </div>
                 <div class="buttons-modal--footer">
                     <button class="button button--primary">Оформить заказ</button>
-                    <button class="button button--secondary button-cancel">Отмена</button>
+                    <button id="cancelButton" class="button button--secondary button-cancel">Отмена</button>
                 </div>
                 <!-- /.buttons-modal--footer -->
             </div>

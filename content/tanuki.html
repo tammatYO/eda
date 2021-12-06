@@ -13,13 +13,13 @@
 </head>
 <body>
     <header class="section__header">
-        <div class="container block">
+        <div class="container block block__header">
             <a href="../index.html" class="logo">
                 <img src="../img/logo.svg" alt="логотип" class="logo__img">
             </a>
             <!-- /.logo -->
             <input type="text" class="input input-adress" placeholder="Адрес доставки">
-            <div class="buttons">
+            <div class="buttons header__buttons">
                 <button class="button button__man button--primary">Войти</button>
                 <button class="button button__cart button--secondary">Корзина</button>
             </div>
@@ -34,7 +34,7 @@
                 <h2 class="section__title">Тануки</h2>
                 <div class="restour__desc">
                     <strong class="card__reit">4,5</strong>
-                    <span class="card__price">От 900 ₽</span>
+                    <span class="card__price tanuki_price">От 900 ₽</span>
                     <p class="card__category">Пицца и суши</p>
                 </div>
                 <!-- /.card__desc -->
@@ -138,7 +138,7 @@
         </div>
     </section>
     <footer class="section__footer">
-        <div class="container block">
+        <div class="container block block__footer">
             <div class="block__navigation">
                 <a href="#" class="logo">
                     <img src="../img/logo.svg" alt="логотип" class="logo__img">
@@ -153,7 +153,7 @@
             </div>
             <!-- /.block__navigation -->
             <div class="socials">
-                <a href="#" class="social-link"><img src="../img/insta.svg" alt="социлаьная сеть" class="social-img"></a>
+                <a href="#" class="social-link"><img src="../img/insta.svg" alt="социлаьная сеть" class="social-img inst"></a>
                 <a href="#" class="social-link"><img src="../img/facebook.svg" alt="социлаьная сеть" class="social-img"></a>
                 <a href="#" class="social-link"><img src="../img/vk.svg" alt="социлаьная сеть" class="social-img"></a>
             </div>
@@ -164,17 +164,19 @@
     <!-- /.section__footer -->
     <div class="modal">
         <div class="modal-block">
-            <h2 class="modal-title">Корзина</h2>
-            <button class="button-closed"></button>
+            <div class="cart-and-close">
+                <h2 class="modal-title">Корзина</h2>
+                <button class="button-closed"></button>
+            </div>
             <div class="modal-body">
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -183,11 +185,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -196,11 +198,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -209,11 +211,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -222,11 +224,11 @@
                 <div class="cart-string">
                     <h3 class="name-dish">Ролл угорь стандарт</h3>
                     <div class="price-count">
-                        <span class="price-dish">250 ₽</span>
+                        <strong class="price-dish">249</strong>
                         <div class="count-block">
-                            <button class="button-count">-</button>
+                            <button class="button-count minus">-</button>
                             <span class="count">1</span>
-                            <button class="button-count">+</button>
+                            <button class="button-count plus">+</button>
                         </div>
                         <!-- /.count-block -->
                     </div>
@@ -235,7 +237,9 @@
             </div>
             <!-- /.body -->
             <div class="modal-footer">
-                <strong class="fullprice">1250 ₽</strong>
+                <div class="fullprice_container">
+                    <strong class="fullprice">1250</strong>
+                </div>
                 <div class="buttons-modal--footer">
                     <button class="button button--primary">Оформить заказ</button>
                     <button id="cancelButton" class="button button--secondary button-cancel">Отмена</button>

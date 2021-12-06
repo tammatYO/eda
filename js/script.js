@@ -2,26 +2,70 @@ const modal = document.querySelector('.modal');
 const buttonCart = document.querySelector('.button__cart');
 const buttonClosed = document.querySelector('.button-closed');
 const cancelButton = document.getElementById('cancelButton');
-const missButton = document.getElementById('bodypart');
+const rows = modal.querySelectorAll('.cart-string');
+const total = modal.querySelector('.fullprice');
 
+
+
+
+
+const toggleModal = function() {
+    modal.classList.toggle('open');
+}
+
+const removeOfModal = function(event) {
+    if (event.target.classList === modal.classList) {
+        modal.classList.remove('open')
+    }
+}
+
+const getFullPrice = () => {
+    let fullprice = 0;
+    const rows = modal.querySelectorAll('.cart-string');
+    rows.forEach(rows => {
+        let newPrice = 0;
+        let priceBlock = rows.querySelector('.price-dish')
+        let price = +priceBlock.textContent
+        fullprice += price;
+    })
+    
+    total.textContent = fullprice
+
+}
+
+getFullPrice()
 
 buttonCart.addEventListener('click', toggleModal);
 buttonClosed.addEventListener('click', toggleModal);
 cancelButton.addEventListener('click', toggleModal);
-missButton.addEventListener('click', removeModal);
+modal.addEventListener('click', removeOfModal);
 
-function toggleModal() {
-    modal.classList.toggle('open');
-}
+rows.forEach(rows => {
+    let newPrice = 0;
+    let priceBlock = rows.querySelector('.price-dish')
+    let price = +priceBlock.textContent
+    let countBlock = rows.querySelector('.count')
+    let count = countBlock.textContent
+    const btnminus = rows.querySelector('.minus')
+    const btnplus = rows.querySelector('.plus')
 
-if (missButton === 'bodypart') {
-    function removeModal() {
-        console.log(missButton);
-    }
-}
+    const getNewPrice = (count, price) => {
+        newPrice = count * price
+        priceBlock.textContent = newPrice
+        getFullPrice()
+    } 
 
-// console.log(modal);
-// console.log(buttonCart);
-// console.log(buttonClosed);
-//  console.log(cancelButton);\
+    btnminus.addEventListener('click', () => {
+        if (count > 0) {
+            count--
+            countBlock.textContent = count
+            getNewPrice(count, price)
+        }
+    })
+    btnplus.addEventListener('click', () => {
+        count++
+        countBlock.textContent = count
+        getNewPrice(count, price)
+    })
 
+})
