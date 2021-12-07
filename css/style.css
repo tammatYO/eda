@@ -82,7 +82,16 @@ body {
 .button__man {  
     background: url(../img/Man.svg) no-repeat 16px center;
 }
-
+.button__man:hover {
+    filter: hue-rotate(30deg);
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+}
+.button__cart:hover {
+    filter: hue-rotate(30deg);
+    transform: scale(1.2);
+    transition-duration: 0.5s;
+}
 .button__bin {
     padding: 8px 36px 8px 16px;
     margin-left: 0px;
@@ -180,20 +189,8 @@ body {
 }
 
 .card:hover {
-    transform: rotate(3deg);
+    transform: translateY(-10px);
     transition-duration: 1s;
-}
-
-.card:nth-child(4):hover {
-    animation-name: mlg;
-    animation-duration: 0.015s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes mlg{
-    100% {
-        transform: rotate(360deg) translateY(-500px) translateX(250px) scale(2);
-    }
 }
 
 .card__main {
@@ -303,12 +300,10 @@ body {
     margin-left: 25px;
 }
 
-
-
-
-
-
-
+.nav-item:hover {
+    color: black;
+    transform: scale(1.1);
+}
 .restour__desc {
     display: flex;
     align-items: center;
